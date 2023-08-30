@@ -20,6 +20,7 @@ public :
 
 class LinkedList{
     Node *head;
+    int size ;
 
     void printRev(Node *node){
         if(node == NULL)
@@ -31,9 +32,15 @@ class LinkedList{
 public:
     LinkedList(){
         head = NULL;
+        size = 0;
+    }
+
+    int Size(){
+        return size;
     }
 
     void Insert(int val){
+        size++;
         if(head == NULL){
             head = new Node(val);
             return;
@@ -48,6 +55,7 @@ public:
     }
 
     void insertAtBeginning(int val){
+        size++;
         if(head == NULL){
             head = new Node(val);
             return;
@@ -71,6 +79,24 @@ public:
     void printReverse(){
         printRev(head);
         cout<<'\n';
+    }
+
+    void Delete(int n){
+        if(n>size)
+            return;
+
+        Node *temp1 = head;
+        if(n == 1){
+            head = temp1->next;
+            delete temp1;
+            return ;
+        }
+        for(int i=2;i<n;i++)
+            temp1 = temp1->next;
+
+        Node *temp2 = temp1->next;
+        temp1->next = temp2->next;
+        delete temp2;
     }
 
 
