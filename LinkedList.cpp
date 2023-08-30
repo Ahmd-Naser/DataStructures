@@ -84,7 +84,7 @@ public:
     void Delete(int n){
         if(n>size)
             return;
-
+        size--;
         Node *temp1 = head;
         if(n == 1){
             head = temp1->next;
