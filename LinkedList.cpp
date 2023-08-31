@@ -29,6 +29,10 @@ class LinkedList{
         cout<<node->data<<' ';
     }
 
+    bool valid(int n){
+        return n>=1 && n<=size;
+    }
+
 public:
     LinkedList(){
         head = NULL;
@@ -82,8 +86,9 @@ public:
     }
 
     void Delete(int n){
-        if(n>size)
+        if(!valid(n))
             return;
+
         size--;
         Node *temp1 = head;
         if(n == 1){

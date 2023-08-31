@@ -24,6 +24,11 @@ public :
 class DoublyLinkedList{
     Node *head;
     int size;
+
+    bool valid(int n){
+        return n>=1 && n<=size;
+    }
+
 public :
 
     DoublyLinkedList(){
@@ -81,7 +86,35 @@ public :
         cout<<'\n';
     }
 
+    void Delete(int n) {
+        if(!valid(n))
+            return ;
+
+        size--;
+
+        if(n == 1) {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+        Node *temp = head;
+
+        for(int i=1;i<n;i++){
+            temp = temp->next;
+        }
+
+        Node *prev = temp->prev;
+        Node *next = temp->next;
+
+        prev->next = next;
+        next->prev = prev;
+
+        delete temp;
+
+    }
 };
+
 
 int main(){
 
