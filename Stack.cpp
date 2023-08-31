@@ -28,6 +28,10 @@ public:
         size = 0;
     }
 
+    int top(){
+        return head->data;
+    }
+
     int Size(){
         return size;
     }
