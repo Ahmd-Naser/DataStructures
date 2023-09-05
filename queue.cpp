@@ -39,6 +39,9 @@ public:
 	{
 		return size;
 	}
+	int front(){
+		return tail->data;
+	}
 	void push(int val)
 	{
 		Node *node = new Node(val);
