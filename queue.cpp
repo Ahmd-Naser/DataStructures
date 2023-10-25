@@ -102,7 +102,7 @@ int main()
 
 		int x;
 		cin >> x;
-		// cout<<x+1<<endl;
+		// cout<<x+1<<endl;//
 		if (x == 1)
 		{
 			int y;
