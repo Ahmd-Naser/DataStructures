@@ -105,7 +105,9 @@ public:
 
         int extra = 0;
         int diff = max(num.size - number.size , 0);
+
         extra+=diff;
+        
         number.addZeros(diff);
 
 
