@@ -15,7 +15,7 @@ public class DSU{
         }
     }
 
-    public bool MegeGroup(int a , int b){
+    public bool MergeGroup(int a , int b){
         a = getPar(a);
         b = getPar(b);
 
